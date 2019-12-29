@@ -1,0 +1,2 @@
+recursive-include data_file_validator/templates *
+recursive-include data_file_validator/static *
