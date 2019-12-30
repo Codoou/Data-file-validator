@@ -1,8 +1,14 @@
 import os
 from flask import Flask
+from pymongo import MongoClient
+
 from .views.home import home_page
 from .views.config import config_page
 from .views.imports import import_page
+from pymongo import MongoClient
+
+global mongo
+mongo = MongoClient()
 
 app = Flask(__name__)
 app.config.from_object('data_file_validator.default_settings')
