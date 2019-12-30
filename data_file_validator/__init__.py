@@ -24,3 +24,4 @@ app.register_blueprint(import_page)
 app.register_blueprint(config_page)
 
 print(app.url_map)
+print(import_page.root_path)
