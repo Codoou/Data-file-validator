@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from .views.home import home_page
 
 app = Flask(__name__)
 app.config.from_object('data_file_validator.default_settings')
@@ -14,4 +15,6 @@ if not app.debug:
     file_handler.setFormatter(logging.Formatter('<%(asctime)s> <%(levelname)s> %(message)s'))
     app.logger.addHandler(file_handler)
 
-import data_file_validator.views
+
+
+app.register_blueprint(home_page)

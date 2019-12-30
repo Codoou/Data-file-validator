@@ -1,6 +1,9 @@
-from flask import render_template
+from flask import render_template, Blueprint
 
 from data_file_validator import app
+
+home_page = Blueprint('home', __name__,
+                      template_folder="templates")
 
 
 @app.route('/')
