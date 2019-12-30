@@ -1,6 +1,8 @@
 import os
 from flask import Flask
 from .views.home import home_page
+from .views.config import config_page
+from .views.imports import import_page
 
 app = Flask(__name__)
 app.config.from_object('data_file_validator.default_settings')
@@ -18,3 +20,7 @@ if not app.debug:
 
 
 app.register_blueprint(home_page)
+app.register_blueprint(import_page)
+app.register_blueprint(config_page)
+
+print(app.url_map)
